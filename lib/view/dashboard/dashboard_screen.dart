@@ -4,6 +4,7 @@ import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import 'package:get/get.dart';
 import 'package:my_groceery_mobile/controller/dashboard_controller.dart';
 import 'package:my_groceery_mobile/view/home/home_screen.dart';
+import 'package:my_groceery_mobile/view/product/product_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -12,14 +13,13 @@ class DashboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<DashboardController>(
       builder: (controller)=> Scaffold(
+        backgroundColor: Colors.grey.shade100,
         body: SafeArea(
           child: IndexedStack(
             index: controller.tabIndex,
             children: [
               const HomeScreen(),
-              Container(
-                color: Colors.red,
-              ),
+              const ProductScreen(),
               Container(
                 color: Colors.blue,
               ),
